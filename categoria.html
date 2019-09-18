@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Categoria</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Fira+Sans&display=swap" rel="stylesheet"></head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="assets/js/codes.js"></script>
+		<script src="assets/js/categoria.js"></script>
+	</head>
+
+	<body>
+		<nav>
+			<div class="logo">
+				<a href="index.html"><img src="assets/img/logo.png" alt="picsum"></a>
+			</div>
+			<ul class="menu-area">
+				<li><a href="index.html">Início</a></li>
+				{{#each portfolio}} 
+				<li><a href="categoria.html?key={{@key}}">{{this.categoria}}</a></li>
+				{{/each}}
+			</ul>
+		</nav>
+
+		<div class="loader hidden">Loading...<img src="assets/img/loading.gif" alt="Carregando"></div>
+
+		<header>
+			<div class="main">
+		  		<h1>Projetos</h1>
+			</div>
+        </header>
+        
+        <section>
+            <div class="descricao">
+                <h2>Já conhece meus projetos?</h2>
+            </div>
+        </section>
+
+		<section class="grid-categoria">
+			{{#each projetos}}
+            <div class="caixa">
+                <a class = "linkx" href="projeto.html?key={{@key}}"><img src="assets/img/{{@key}}.png" alt="{{@key}}.png"></a>
+                <a class = "linkx1" href="projeto.html?key={{@key}}"><h3>{{this.titulo}}</h3></a>
+				<a class = "linkx2" href="projeto.html?key={{@key}}"><p>{{this.descricao}}</p></a>
+			</div>
+			{{/each}}
+		</section>
+
+	</body>
+</html>
